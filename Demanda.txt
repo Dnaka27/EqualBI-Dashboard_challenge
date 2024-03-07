@@ -1,0 +1,46 @@
+    Após chegar na sala do departamento, o gerente lhe contou que recentemente foi
+adquirido um novo sistema para o registro das vendas e que, por esse motivo, ele ainda não
+possui relatórios disponíveis com os dados de vendas dos últimos 3 anos. Sendo assim,
+seu objetivo é construir um dashboard gerencial para auxiliar na tomada de decisão do
+gerente. Ao perguntar sobre suas necessidades, ele informou-lhe o seguinte:
+
+    I. O departamento de vendas precisa monitorar como está a margem de lucro e o
+    volume de vendas dos produtos. Para tanto, faz-se necessário mensurar:
+
+        A. Quais foram as 5 famílias de produtos que geraram maior lucro nos últimos
+        três anos?
+        B. Para cada uma dessas 5 famílias, quais são os 3 produtos que tiveram maior
+        contribuição para o lucro total acumulado?
+        C. Ao avaliar esses produtos, é possível perceber se os que geram maior lucro
+        são também os mais vendidos?
+        D. Dica: Crie colunas que comparem custo unitário, preço de venda e descontos
+        aplicados para calcular a margem de lucro.
+
+    II. O gerente precisa saber quais famílias de produtos estão apresentando crescimento
+    ou declínio em termos de vendas nos últimos anos.
+
+        A. Calcule o crescimento médio mensal de faturamento por família de produtos.
+        B. Quais foram as 5 famílias com maior crescimento e quais são as 5 famílias
+        com menor crescimento, ou decrescimento?
+        C. A partir dessa informação, quais sugestões você recomendaria ao gerente
+        para adaptar sua estratégia de negócios?
+        D. Dica: Implemente gráficos de tendência ao longo do tempo para identificar
+        mudanças nas preferências dos consumidores.
+
+    III. Para que o gerente possa embasar seu plano de expansão comercial, será muito
+    importante monitorar a performance de vendas nas filiais. Para tanto, faça um
+    relatório apresentando:
+
+        A. O faturamento total de vendas por filial ao longo do tempo (Ano, Mês e/ou
+        Dia).
+        B. O Ticket Médio, ou faturamento médio por venda, de cada Filial.
+        C. O Faturamento médio mensal por Vendedor em cada Filial.
+        D. Contagem distinta de clientes que compraram em cada Filial por Mês
+        E. Que tratativas você sugeriria ao gerente para melhorar a performance de
+        vendas? Justifique sua resposta baseando-se em dados.
+
+    IV. (Opcional) Além das informações solicitadas, inclua em seu relatório outras análises
+    que você julga ser interessantes para gerente comercial analisar.
+
+A. Dica: Pesquise sobre relatórios e indicadores de vendas. Explore quais
+dados você tem acesso e que relatórios você poderia fazer com eles.
