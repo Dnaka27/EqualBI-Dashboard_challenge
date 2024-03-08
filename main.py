@@ -23,17 +23,16 @@ with st.sidebar:
         menu_icon = "house",
         default_index = 0
         )
-if selected == "Produtos":
-    st.subheader(":red[Relatórios]")
-        
+if selected == "Produtos":        
     with st.container():   
-        st.write("")
+        st.subheader(":red[Relatórios de produtos e famílias:]")
+        
         df_fam_prod_venda["descricao_codigo"] = df_fam_prod_venda.apply(lambda x: f"{x['codigo_familia']} - {x['descricaofamilia']}", axis=1)
+        st.write("---")
         
         df_fam_prod_venda_group = df_fam_prod_venda.groupby(['descricao_codigo', 'codigo_familia'])['lucro_produto'].sum().reset_index()
         
         number_filter_fam = int(st.slider("Famílias de produtos a visualizar: ", 1, 75, 7))
-        st.write("---")
         df_fam_prod_venda_order = st.selectbox("Famílias ordenadas por lucro: ", ["Decrescente", "Crescente"])
         
         df_fam_prod_venda_group = df_fam_prod_venda_group.sort_values(by='lucro_produto', ascending=(df_fam_prod_venda_order == "Crescente")).reset_index(drop=True)
@@ -70,7 +69,7 @@ if selected == "Produtos":
             with prod_search_filter:
                 number_filter_prod_search = int(st.slider("Produtos a visualizar: ", 0, 10, default_value_slider_prod))
                 df_fam_prod_venda_order_prod_search = st.selectbox("Ordenação: ", [text_prodOrder1, text_prodOrder2])
-            st.markdown("---")
+            st.write("---")
             
             df_fam_prod_venda_filter_order_search = df_fam_prod_venda_filter_order_search.sort_values(by=role, ascending=(df_fam_prod_venda_order_fam_search == text_famOrder2)).reset_index(drop=True)
             df_fam_prod_venda_filter_order_search = df_fam_prod_venda_filter_order_search["codigo_familia"].head(number_filter_fam_search)
@@ -112,8 +111,8 @@ if selected == "Produtos":
 
 if selected == "Filiais":
     with st.container():
-        st.markdown("")
-        st.markdown("#### :red[Faturamento geral das filiais nos últimos 3 anos:]")
+        st.subheader(":green[Faturamento das filiais nos últimos 3 anos:]")
+        st.write('---')
         df_saleBranch_mut = df_saleBranch
         df_saleBranch_groupBranch = df_saleBranch_mut.groupby(["filial_venda"])["valor_monetario_total"].sum().reset_index()
         
@@ -159,6 +158,7 @@ if selected == "Filiais":
 
 if selected == "Dados":
     st.subheader(":orange[Dados utilizados: ]")
+    st.write("---")
     tab1, tab2, tab3 = st.tabs(["Família, produtos e quantidade", "Vendas de produtos pelo tempo", "Vendedores e Filiais"])
 
     @st.cache_data
