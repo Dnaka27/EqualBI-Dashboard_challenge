@@ -15,4 +15,4 @@ Abaixo também as tecnologias que utilizei para a página
 -    ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=Pandas&logoColor=blue)
 -    ![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=Plotly&logoColor=green)
 
-##### OBS: Na pasta "python_codes" estão os arquivos tipo "jupyter notebook" que são os passos que fiz para tratar e limpar os dados
+## OBS: Na pasta "python_codes" estão os arquivos tipo "jupyter notebook" que são os passos que fiz para tratar e limpar os dados
