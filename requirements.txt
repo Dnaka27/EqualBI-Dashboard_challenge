@@ -1,0 +1,4 @@
+# requirements.txt
+streamlit
+pandas
+streamlit_option_menu
