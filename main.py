@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 from streamlit_option_menu import option_menu
-import plotly.graph_objects as go
 
 st.set_page_config(page_title="Equal Dashboard", initial_sidebar_state="auto")
 
