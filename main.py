@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import plotly.graph_objects as go
 from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title="Equal Dashboard", initial_sidebar_state="auto")
@@ -50,9 +49,11 @@ if selected == "Produtos":
             
         df_fam_prod_venda_filter_order = df_fam_prod_venda_group.head(number_filter_fam) 
 
-        fig_order_by_fam_prod_venda = go.Figure(data=[go.Bar(x=df_fam_prod_venda_filter_order['descricao_codigo'], y=df_fam_prod_venda_filter_order['lucro_produto'])])
-        fig_order_by_fam_prod_venda.update_layout(xaxis=dict(tickmode='linear'), yaxis=dict(title='LUCRO POR FAMÍLIA',  titlefont=dict(color='rgb(0,210,0)', size=15, family='Montserrat, sans-serif')))
-        st.plotly_chart(fig_order_by_fam_prod_venda)
+        # fig_order_by_fam_prod_venda = go.Figure(data=[go.Bar(x=df_fam_prod_venda_filter_order['descricao_codigo'], y=df_fam_prod_venda_filter_order['lucro_produto'])])
+        # fig_order_by_fam_prod_venda.update_layout(xaxis=dict(tickmode='linear'), yaxis=dict(title='LUCRO POR FAMÍLIA',  titlefont=dict(color='rgb(0,210,0)', size=15, family='Montserrat, sans-serif')))
+        # st.plotly_chart(fig_order_by_fam_prod_venda)
+        
+        st.bar_chart(df_fam_prod_venda_filter_order, x="descricao_codigo", y="lucro_produto")
         
         def render_by_role(role):
             if role == "lucro_produto":
@@ -95,10 +96,12 @@ if selected == "Produtos":
                 df_fam_prod_search_prod_top_filter = df_fam_prod_search_prod_top[df_fam_prod_search_prod_top["codigo_familia"] == cod]
                 if i % 2 == 0:
                     with prod_a:  
+                        st.write(f"Família: :green[{cod}]")
                         st.bar_chart(df_fam_prod_search_prod_top_filter, x="descricaoproduto", y=role)
                     i+=1
                 else:
                     with prod_b:
+                        st.write(f"Família: :green[{cod}]")
                         st.bar_chart(df_fam_prod_search_prod_top_filter, x="descricaoproduto", y=role)
                     i+=1
         
@@ -123,6 +126,7 @@ if selected == "Produtos":
             for cod_fam in df_fam_most_sales["codigo_familia"].head(number_filter_fam_timed).to_list():
                 df_fam_most_sales_timed_filter = df_fam_most_sales_timed[df_fam_most_sales_timed["codigo_familia"] == cod_fam]
                 df_fam_most_sales_timed_filter_order = df_fam_most_sales_timed_filter.sort_values(by="data", ascending=True).reset_index(drop=True)
+                st.write(f"Família: :green[{cod_fam}]")
                 st.line_chart(df_fam_most_sales_timed_filter_order, x="data", y="valor_monetario_total")
 
 if selected == "Filiais":
