@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import streamlit_option_menu
 from streamlit_option_menu import option_menu
+import plotly.graph_objects as go
 
 st.set_page_config(page_title="Equal Dashboard", initial_sidebar_state="auto")
 
@@ -49,8 +50,13 @@ if selected == "Produtos":
         df_fam_prod_venda_group = df_fam_prod_venda_group.sort_values(by='lucro_produto', ascending=(df_fam_prod_venda_order == "Crescente")).reset_index(drop=True)
             
         df_fam_prod_venda_filter_order = df_fam_prod_venda_group.head(number_filter_fam) 
+
+        fig_order_by_fam_prod_venda = go.Figure()
+        fig_order_by_fam_prod_venda = go.Figure(data=[go.Bar(x=df_fam_prod_venda_filter_order['descricao_codigo'], y=df_fam_prod_venda_filter_order['lucro_produto'])])
+        fig_order_by_fam_prod_venda.update_layout(xaxis=dict(tickmode='linear'), yaxis=dict(title='LUCRO POR FAMÍLIA',  titlefont=dict(color='rgb(0,210,0)', size=15, family='Montserrat, sans-serif')))
+        st.plotly_chart(fig_order_by_fam_prod_venda)
         
-        st.bar_chart(df_fam_prod_venda_filter_order, x="descricao_codigo", y="lucro_produto")
+        # st.bar_chart(df_fam_prod_venda_filter_order, x="descricao_codigo", y="lucro_produto")
         
         def render_by_role(role):
             if role == "lucro_produto":

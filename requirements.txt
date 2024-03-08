@@ -3,3 +3,4 @@ streamlit
 pandas
 streamlit_option_menu
 openpyxl
+plotly
