@@ -37,13 +37,13 @@ if selected == "Produtos":
     st.subheader(":red[Relatórios]")
         
     with st.container():   
-        st.write("Famílias: ")
+        st.markdown("Famílias: ")
         df_fam_prod_venda_mut["descricao_codigo"] = df_fam_prod_venda_mut.apply(lambda x: f"{x['codigo_familia']} - {x['descricaofamilia']}", axis=1)
         
         df_fam_prod_venda_group = df_fam_prod_venda_mut.groupby(['descricao_codigo', 'codigo_familia'])['lucro_produto'].sum().reset_index()
         
         number_filter_fam = int(st.slider("Famílias de produtos a visualizar: ", 1, 75, 7))
-        st.write("---")
+        st.markdown("---")
         df_fam_prod_venda_order = st.selectbox("Ordenação: ", ["Decrescente", "Crescente"], key=get_unique_key())
         
         df_fam_prod_venda_group = df_fam_prod_venda_group.sort_values(by='lucro_produto', ascending=(df_fam_prod_venda_order == "Crescente")).reset_index(drop=True)
@@ -70,7 +70,7 @@ if selected == "Produtos":
                 text_prodOrder1 = "Produtos que mais vendem"
                 text_prodOrder2 = "Produtos que menos vendem"
     
-            st.write("Produtos: ")
+            st.markdown("Produtos: ")
             df_fam_prod_venda_filter_order_search = df_fam_prod_venda_mut.groupby("codigo_familia")[role].sum().reset_index()
             
             fam_search_filter, prod_search_filter = st.columns(2)
@@ -80,7 +80,7 @@ if selected == "Produtos":
             with prod_search_filter:
                 number_filter_prod_search = int(st.slider("Produtos a visualizar: ", 0, 10, default_value_slider_prod))
                 df_fam_prod_venda_order_prod_search = st.selectbox("Ordenação: ", [text_prodOrder1, text_prodOrder2])
-            st.write("---")
+            st.markdown("---")
             
             df_fam_prod_venda_filter_order_search = df_fam_prod_venda_filter_order_search.sort_values(by=role, ascending=(df_fam_prod_venda_order_fam_search == text_famOrder2)).reset_index(drop=True)
             df_fam_prod_venda_filter_order_search = df_fam_prod_venda_filter_order_search["codigo_familia"].head(number_filter_fam_search)
@@ -94,13 +94,11 @@ if selected == "Produtos":
             for cod in df_fam_prod_venda_filter_order_search.to_list():
                 df_fam_prod_search_prod_top_filter = df_fam_prod_search_prod_top[df_fam_prod_search_prod_top["codigo_familia"] == cod]
                 if i % 2 == 0:
-                    with prod_a:
-                        st.write(f"Família - Descrição: :green[{df_fam_prod_search_prod_top_filter["descricao_codigo"].iloc[0]}]")
+                    with prod_a:  
                         st.bar_chart(df_fam_prod_search_prod_top_filter, x="descricaoproduto", y=role)
                     i+=1
                 else:
                     with prod_b:
-                        st.write(f"Família - Descrição: :green[{df_fam_prod_search_prod_top_filter["descricao_codigo"].iloc[0]}]")
                         st.bar_chart(df_fam_prod_search_prod_top_filter, x="descricaoproduto", y=role)
                     i+=1
         
@@ -125,12 +123,12 @@ if selected == "Produtos":
             for cod_fam in df_fam_most_sales["codigo_familia"].head(number_filter_fam_timed).to_list():
                 df_fam_most_sales_timed_filter = df_fam_most_sales_timed[df_fam_most_sales_timed["codigo_familia"] == cod_fam]
                 df_fam_most_sales_timed_filter_order = df_fam_most_sales_timed_filter.sort_values(by="data", ascending=True).reset_index(drop=True)
-                st.write(f"Família - Descrição: :green[{df_fam_most_sales_timed_filter_order["descricao_codigo"].iloc[0]}]")
+                st.markdown(f"Família - Descrição: :green[{df_fam_most_sales_timed_filter_order["descricao_codigo"].iloc[0]}]")
                 st.line_chart(df_fam_most_sales_timed_filter_order, x="data", y="valor_monetario_total")
 
 if selected == "Filiais":
     with st.container():
-        st.write("")
+        st.markdown("")
         st.markdown("#### :red[Faturamento geral das filiais nos últimos 3 anos:]")
         df_saleBranch_mut = df_saleBranch
         df_saleBranch_groupBranch = df_saleBranch_mut.groupby(["filial_venda"])["valor_monetario_total"].sum().reset_index()
@@ -141,7 +139,7 @@ if selected == "Filiais":
         st.bar_chart(df_saleBranch_groupBranch, x="filial_venda", y="valor_monetario_total")
         
         with st.expander("CRESCIMENTO DE FATURAMENTO"):
-            st.write("Famílias que mais cresceram/decresceram")
+            st.markdown("Famílias que mais cresceram/decresceram")
             number_filter_fam_timed_fat = int(st.slider("Famílias de produtos a visualizar: ", 1, 75, 4))
             df_fam_prod_venda_order_timed_fat = st.selectbox("Ordenação: ", ["Famílias que mais cresceram", "Famílias que menos cresceram"], key=get_unique_key())
             
@@ -155,7 +153,7 @@ if selected == "Filiais":
             df_most_variable_fat = df_fam_prod_venda_timed_fat.head(number_filter_fam_timed_fat)
             df_most_variable_fat["descricao_codigo"] = df_most_variable_fat.apply(lambda x: f"{x['codigo_familia']} - {x['descricaofamilia']}", axis=1)
             
-            st.write(f"Família - Descrição: :green[{df_most_variable_fat["descricao_codigo"].iloc[0]}]")
+            st.markdown(f"Família - Descrição: :green[{df_most_variable_fat["descricao_codigo"].iloc[0]}]")
             st.bar_chart(df_most_variable_fat, x="descricao_codigo", y="dif_fat")
                     
         with st.expander("FATURAMENTO DETALHADO"):
@@ -164,13 +162,13 @@ if selected == "Filiais":
             for filial in chosen_branch:
                 df_filial_chosen = df_saleBranch_groupBranch_date[df_saleBranch_groupBranch_date["filial_venda"] == filial]
                 df_filial_chosen_order = df_filial_chosen.sort_values(by="data_venda", ascending=True).reset_index(drop=True)
-                st.write(f"Filial N°: :green[{filial}]")
+                st.markdown(f"Filial N°: :green[{filial}]")
                 st.line_chart(df_filial_chosen_order, x="data_venda", y="valor_monetario_total")
                 
         with st.expander("FATURAMENTO POR VENDEDOR"):
             number_filter_branchEmpl = int(st.slider("Vendedores a visualizar: ", 1, 50, 10))
             df_fam_prod_venda_order_empl = st.selectbox("Ordenação: ", ["Vendedores que mais venderam", "Vendedores que menos venderam"])
-            st.write("---")
+            st.markdown("---")
             
             df_saleBranch_groupEmpl = df_saleBranch.groupby(["codigo_vendedor", "nome_vendedor"])["valor_monetario_total"].sum().reset_index()
             df_saleBranch_groupEmpl["codigo_nome"] = df_saleBranch_groupEmpl.apply(lambda x: f"{x['codigo_vendedor']} - {x['nome_vendedor']}", axis=1)
@@ -181,10 +179,10 @@ if selected == "Filiais":
 if selected == "Dados":
     st.subheader("Dados utilizados: ")
     st.markdown("#### :orange[Família, produtos e quantidade]")
-    st.write(df_fam_prod_venda_mut)
-    st.write("---")
+    st.markdown(df_fam_prod_venda_mut)
+    st.markdown("---")
     st.markdown("#### :orange[Vendas de produtos pelo tempo]")
-    st.write(df_fam_prod_venda_timed)
-    st.write("---")
+    st.markdown(df_fam_prod_venda_timed)
+    st.markdown("---")
     st.markdown("#### :orange[Vendedores e Filiais]")
-    st.write(df_saleBranch)
+    st.markdown(df_saleBranch)
