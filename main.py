@@ -123,7 +123,6 @@ if selected == "Produtos":
             for cod_fam in df_fam_most_sales["codigo_familia"].head(number_filter_fam_timed).to_list():
                 df_fam_most_sales_timed_filter = df_fam_most_sales_timed[df_fam_most_sales_timed["codigo_familia"] == cod_fam]
                 df_fam_most_sales_timed_filter_order = df_fam_most_sales_timed_filter.sort_values(by="data", ascending=True).reset_index(drop=True)
-                st.markdown(f"Família - Descrição: :green[{df_fam_most_sales_timed_filter_order["descricao_codigo"].iloc[0]}]")
                 st.line_chart(df_fam_most_sales_timed_filter_order, x="data", y="valor_monetario_total")
 
 if selected == "Filiais":
@@ -153,7 +152,6 @@ if selected == "Filiais":
             df_most_variable_fat = df_fam_prod_venda_timed_fat.head(number_filter_fam_timed_fat)
             df_most_variable_fat["descricao_codigo"] = df_most_variable_fat.apply(lambda x: f"{x['codigo_familia']} - {x['descricaofamilia']}", axis=1)
             
-            st.markdown(f"Família - Descrição: :green[{df_most_variable_fat["descricao_codigo"].iloc[0]}]")
             st.bar_chart(df_most_variable_fat, x="descricao_codigo", y="dif_fat")
                     
         with st.expander("FATURAMENTO DETALHADO"):
