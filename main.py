@@ -7,7 +7,7 @@ st.set_page_config(page_title="Equal Dashboard", initial_sidebar_state="auto")
 
 @st.cache_data
 def load_data(file):
-  return pd.read_excel(rf"C:\Users\diogo\OneDrive\Documents\Dev\Creating\Projetos\Python\Python Dashboard Equal\excel_data\{file}")
+  return pd.read_excel(rf"excel_data/{file}")
 
 df_fam_prod_venda = load_data("df_fam_prod_venda.xlsx")
 df_fam_prod_venda_timed = load_data("df_fam_prod_venda_timed.xlsx")
