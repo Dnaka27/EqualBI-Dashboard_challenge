@@ -47,7 +47,7 @@ if selected == "Produtos":
         fig_order_by_fam_prod_venda.update_layout(xaxis=dict(tickmode='linear'), yaxis=dict(title='LUCRO POR FAMÍLIA',  titlefont=dict(color='rgb(0,210,0)', size=15, family='Montserrat, sans-serif')))
         st.plotly_chart(fig_order_by_fam_prod_venda)
         
-        st.bar_chart(df_fam_prod_venda_filter_order, x="Codigo - Descrição", y="Lucro por família")
+        # st.bar_chart(df_fam_prod_venda_filter_order, x="Codigo - Descrição", y="Lucro por família")
         
         def render_by_role(role):
             if role == "lucro_produto":
