@@ -25,7 +25,7 @@ with st.sidebar:
         )
 if selected == "Produtos":        
     with st.container():   
-        st.subheader(":red[Relatórios de produtos e famílias:]")
+        st.subheader(":blue[Relatórios de produtos e famílias:]")
         
         df_fam_prod_venda["descricao_codigo"] = df_fam_prod_venda.apply(lambda x: f"{x['codigo_familia']} - {x['descricaofamilia']}", axis=1)
         st.write("---")
