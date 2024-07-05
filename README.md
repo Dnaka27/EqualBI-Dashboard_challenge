@@ -13,6 +13,9 @@ Abaixo também as tecnologias que utilizei para a página
 -   Linguagens de Programação:
 
 -    ![Python](https://img.shields.io/badge/Python-59D8D8?style=for-the-badge&logo=python)
+
+-   Bibliotecas e frameworks:
+
 -    ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=NumPy&logoColor=blue)
 -    ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=Pandas&logoColor=blue)
 -    ![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=Plotly&logoColor=green)
