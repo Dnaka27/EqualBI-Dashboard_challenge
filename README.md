@@ -13,8 +13,7 @@ Abaixo também as tecnologias que utilizei para a página
 -   Linguagens de programação:
 
 -    ![Python](https://img.shields.io/badge/Python-59D8D8?style=for-the-badge&logo=python)
-
-
+<br>
 -   Bibliotecas e frameworks:
 
 -    ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=NumPy&logoColor=blue)
