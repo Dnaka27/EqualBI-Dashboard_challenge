@@ -1,0 +1,100 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyd
+*.pdb
+*.db
+*.sqlite
+*.pyc
+*.pyo
+*.pyd
+*.sublime-workspace
+*.sublime-project
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+egg-info/
+*.egg
+*.egg-info/
+pip-wheel-metadata/
+__pypackages__/
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+*.coverage
+*.coverage.*
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+*.d
+*.gcov
+*.nib
+*.test
+*.coverage
+
+# Pytest
+.cache
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+media/
+
+# Flask stuff:
+instance/
+*.env
+*.venv
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# mypy
+.mypy_cache/
+
+# Pyre type checker
+.pyre/
+
+# VSCode
+.vscode/
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Sphinx documentation
+docs/_build/
+
+# PyInstaller
+*.spec
