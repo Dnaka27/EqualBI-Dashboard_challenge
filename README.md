@@ -4,7 +4,7 @@
 
 #### Criei um painel interativo após tratar e limpar os dados no intuito de facilitar as interpretações e consultas simples. A aplicação foi feita com <a href="https://streamlit.io/">Streamlit</a> e consta como um relatório que possui informações gerenciais, como exemplos: produtos, clientes e filiais.
 
-#### <a href="https://equalbi-dashboardchallenge-diogooike.streamlit.app/">-LINK-<a>
+#### <a href="https://equalbi-dashboardchallenge-geoqtuhc7kaiplbmwm3cgw.streamlit.app/">-VISITAR PROJETO-<a>
 
 Abaixo também as tecnologias que utilizei para a página
 
