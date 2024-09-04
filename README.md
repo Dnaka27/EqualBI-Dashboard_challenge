@@ -30,7 +30,7 @@ In the "python_codes" folder, you will find Jupyter Notebook files that detail t
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. This allows for flexibility and open usage while ensuring proper credit is given.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details. This allows for flexibility and open usage while ensuring proper credit is given.
 
 ---
 
