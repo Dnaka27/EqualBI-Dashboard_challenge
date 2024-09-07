@@ -4,7 +4,7 @@
 
 This is a proposed solution for an internship challenge focused on data visualization. I created an interactive dashboard to facilitate data interpretation and simple queries. The application was built with [Streamlit](https://streamlit.io/) and serves as a report containing managerial information, such as products, customers, and branches.
 
-👉 **[View the Dashboard](https://equalbi-dashboardchallenge-diogooike.streamlit.app/)**
+👉 **[View the Dashboard](https://equalbi-dashboardchallenge-geoqtuhc7kaiplbmwm3cgw.streamlit.app/)**
 
 ---
 
