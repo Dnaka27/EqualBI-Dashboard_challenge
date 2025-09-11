@@ -7,11 +7,11 @@ st.set_page_config(page_title="Equal Dashboard", initial_sidebar_state="auto")
 
 @st.cache_data
 def load_data(file):
-  return pd.read_excel(rf"excel_data/{file}")
+  return pd.read_csv(rf"data_related/{file}")
 
-df_fam_prod_venda = load_data("df_fam_prod_venda.xlsx")
-df_fam_prod_venda_timed = load_data("df_fam_prod_venda_timed.xlsx")
-df_saleBranch = load_data("df_saleBranch.xlsx")
+df_fam_prod_venda = load_data("df_fam_prod_venda.csv")
+df_fam_prod_venda_timed = load_data("df_fam_prod_venda_timed.csv")
+df_saleBranch = load_data("df_saleBranch.csv")
 
 with st.container():
     st.title("Dashboard gerencial")
@@ -24,6 +24,7 @@ with st.sidebar:
         menu_icon = "house",
         default_index = 0
         )
+    
 if selected == "Produtos":        
     with st.container():   
         st.subheader(":blue[Relatórios de produtos e famílias:]")
@@ -113,7 +114,6 @@ if selected == "Produtos":
                 df_fam_most_sales_timed_filter_order = df_fam_most_sales_timed[df_fam_most_sales_timed["codigo_familia"] == cod_fam].sort_values(by="data", ascending=True).reset_index(drop=True)
                 st.write(f"Família: :green[{cod_fam}]")
                 st.line_chart(df_fam_most_sales_timed_filter_order, x="data", y="valor_monetario_total")
-
 
 if selected == "Filiais":
     with st.container():
