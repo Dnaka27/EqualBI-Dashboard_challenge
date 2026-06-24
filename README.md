@@ -1,33 +1,45 @@
-# EqualBI Challenge
+# EqualBI Dashboard Challenge
 
-## 📝 Overview
+Internship challenge solution — interactive dashboard for managerial data reporting.
 
-This is a proposed solution for an internship challenge focused on data visualization. I created an interactive dashboard to facilitate data interpretation and simple queries. The application was built with [Streamlit](https://streamlit.io/) and serves as a report containing managerial information, such as products, customers, and branches.
-
-👉 **[View the Dashboard](https://equalbi-dashboardchallenge-geoqtuhc7kaiplbmwm3cgw.streamlit.app/)**
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://equalbi-dashboardchallenge-geoqtuhc7kaiplbmwm3cgw.streamlit.app/)
 
 ---
 
-## 🚀 Technologies Used
+## Technologies
 
-Here are the main technologies and tools utilized in this project:
-
-### 🛠️ **Programming Language**
-- ![Python](https://img.shields.io/badge/Python-59D8D8?style=for-the-badge&logo=python)
-
-### 📚 **Libraries and Frameworks**
-- ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=NumPy&logoColor=blue)
-- ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=Pandas&logoColor=blue)
-- ![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=Plotly&logoColor=green)
+![Python](https://img.shields.io/badge/Python-1F2194?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Plotly](https://img.shields.io/badge/Plotly-5B00E8?style=for-the-badge&logo=plotly&logoColor=white)
 
 ---
 
-## 📂 Project Files
+## About
 
-In the "python_codes" folder, you will find Jupyter Notebook files that detail the steps taken for data cleaning and preparation. These notebooks provide insights into the data processing workflow used in this project.
+Proposed solution for a data visualization internship challenge. Displays managerial information on products, customers, and branches through an interactive Streamlit interface with filtering and chart-based exploration.
+
+Data cleaning and preparation steps are documented in the Jupyter Notebook files inside the `python_codes` folder.
 
 ---
 
-## 📝 License
+## Installation
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details. This allows for flexibility and open usage while ensuring proper credit is given.
+```bash
+pip install -r requirements.txt
+streamlit run main.py
+```
+
+---
+
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE.txt) file for details.
+
+---
+
+## Contact
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-78d?style=for-the-badge&logo=linkedin&logoColor=0A0AAF)](https://www.linkedin.com/in/diogo-oike-kanefuku-23639b223/) 
+[![E-mail](https://img.shields.io/badge/-Email-e9a?style=for-the-badge&logo=gmail&logoColor=E94D5F)](mailto:diogooikejapan@gmail.com)
